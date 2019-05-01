@@ -1,0 +1,24 @@
+cd ~/desktop/acct890
+ ssh -i 44134843.pem ubuntu@ec2-3-104-79-88.ap-southeast-2.compute.amazonaws.com
+
+a)
+curl https://www.staff.hs-mittweida.de/~wuenschi/data/media/compbiolbook/chapter-11-regex--structure.pdb > structure.pdb
+cat structure.pdb
+sed 's/Beisel/Weisel/' structure.pdb
+b)
+sed '1,3d' structure.pdb
+c)
+sed -n '5,10p' structure.pdb
+d)
+sed '/MET/d' structure.pdb
+e)
+sed -n '/HELIX.*ILE/p' structure.pdb
+f)
+sed '/^H/s/$/***/' structure.pbd
+g)
+sed '/SEQRES/s/^.*$/SEQ/' structure.pdb
+h)
+scp -i 44134843.pem jabberwocky.txt ubuntu@ec2-3-104-79-88.ap-southeast-2.compute.amazonaws.com:
+
+ssh -i 44134843.pem ubuntu@ec2-3-104-79-88.ap-southeast-2.compute.amazonaws.com
+sed '/^$/d' jabberwocky.txt
